@@ -1,14 +1,12 @@
 import './App.css'
-import {FC} from 'react';
+import FamilyComponent from "./components/family-component/FamilyComponent.tsx";
 
-type MyPropsType = {text: string};
-
-const App:FC<MyPropsType> = ({text}) => {
+function App (){
     return (
-        <div>
-            {text}
-        </div>
+        <>
+            <FamilyComponent/>
+        </>
     );
-};
+}
 
 export default App;
