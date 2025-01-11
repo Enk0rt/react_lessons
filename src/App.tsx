@@ -1,14 +1,13 @@
 import './App.css'
-import {FC} from 'react';
+import ToDoList from "./components/todo/todo-list/ToDoList.tsx";
 
-type MyPropsType = {text: string};
 
-const App:FC<MyPropsType> = ({text}) => {
+function App() {
     return (
-        <div>
-            {text}
-        </div>
+        <>
+            <ToDoList/>
+        </>
     );
-};
+}
 
 export default App;
