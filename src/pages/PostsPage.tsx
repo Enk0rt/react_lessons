@@ -1,9 +1,9 @@
-import {Posts} from "../components/posts-list/Posts.tsx";
+import {PostsList} from "../components/posts-list/PostsList.tsx";
 
 const PostsPage = () => {
     return (
         <div>
-            <Posts/>
+            <PostsList/>
         </div>
     );
 };
