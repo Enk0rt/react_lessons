@@ -1,8 +1,8 @@
 import {createBrowserRouter,} from "react-router-dom";
 import {MainLayout} from "../layouts/MainLayout.tsx";
-import {UsersPage} from "../pages-model/UsersPage.tsx";
-import {UsersCartPage} from "../pages-model/UsersCartPage.tsx";
-import Home from "../pages-model/Home.tsx";
+import {UsersPage} from "../pages/UsersPage.tsx";
+import {UsersCartPage} from "../pages/UsersCartPage.tsx";
+import Home from "../pages/Home.tsx";
 
 export const routes = createBrowserRouter([{
     path: '/', element: <MainLayout/>, children: [
