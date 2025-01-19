@@ -18,7 +18,7 @@ export const Cart:FC<CartPropsType> = ({cart}) => {
                 <h2 className={'text-7xl'}>Cart | {user.id}. {user.firstName} {user.lastName}</h2>
                 <p className={' text-5xl'}>Total - {cart.total}$</p>
             </div>
-                <ProductsList/>
+                <ProductsList cart={cart}/>
         </div>
     );
 };
