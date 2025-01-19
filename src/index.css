@@ -16,3 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.h-92{
+  height: 91vh;
+}
