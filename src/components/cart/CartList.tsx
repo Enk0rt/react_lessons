@@ -10,14 +10,14 @@ export const CartList = () => {
     const [carts, setCarts] = useState<ICart[]>([])
     useEffect(() => {
         if(id){
-            dataService.getCarts(+id).then(({carts}:ICartResponse)=> setCarts(carts))
+            dataService.getCarts(+id).then(({carts}:ICartResponse) => setCarts(carts))
         }
     }, [id]);
 
     return (
-        <div>
+        <div className={'flex justify-center items-center h-96'}>
             {
-                carts.map(cart => <Cart key={cart.id} cart={cart}/>)
+                carts.length === 0 ? <div>Cart is Empty</div> : carts.map(cart => <Cart key={cart.id} cart={cart}/>)
             }
         </div>
     );
