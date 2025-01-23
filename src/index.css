@@ -16,3 +16,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+input{
+  background-color: rgba(129, 129, 129, 0.4);
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 5px 15px ;
+  height: 40px;
+}
+label{
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
