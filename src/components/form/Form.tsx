@@ -9,10 +9,6 @@ export const Form = () => {
         mode: 'all',
         resolver: joiResolver(carValidator)
     })
-
-    // const handleSubmit = (data:IForm) => {
-    //     console.log(data);
-    // }
     return (
         <div>
             <h2 className={'text-center text-black'}>Add Car</h2>

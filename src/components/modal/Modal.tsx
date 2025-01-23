@@ -1,7 +1,6 @@
 import './Modal.css'
 import {FC, ReactNode} from "react";
 
-
 type ModalProps={
     active:boolean,
     setActive: (b: boolean)=>void,
