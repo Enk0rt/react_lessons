@@ -6,8 +6,8 @@ export const useGetCars = () => {
     const [cars, setCars] = useState<ICar[]>([])
     useEffect(() => {
         getCars().then(cars => setCars(cars))
-    }, [cars]);
-
+    }, []);
     console.log(cars)
+
     return {cars,setCars}
 }

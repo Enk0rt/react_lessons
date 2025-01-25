@@ -7,6 +7,7 @@ export const getCars = async ():Promise<ICar[]> => {
     return data;
 }
 
-export const addCar = (data:IForm,fn: () => void) => {
-    axiosInstance.post('/cars',data).then(getCars).finally(fn)
+export const addCar = async (data:IForm) => {
+    await axiosInstance.post('/cars',data)
+    await getCars()
 }
