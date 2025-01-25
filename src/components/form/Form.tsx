@@ -3,8 +3,9 @@ import {IForm} from "../../models/form/IForm.ts";
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/car-validator/CarValidator.ts";
-import {Dispatch, FC, SetStateAction, } from "react";
-import {addCar} from "../../api/getData.ts";
+import {Dispatch, FC, SetStateAction, useEffect, useState} from "react";
+import {ICar} from "../../models/cars/ICar.tsx";
+import {addCar, getCars} from "../../api/getData.ts";
 
 type FormProps = {
     setActive: Dispatch<SetStateAction<boolean>>;
@@ -16,12 +17,24 @@ export const Form: FC<FormProps> = ({setActive}) => {
         resolver: joiResolver(carValidator),
     });
 
+    const [cars, setCars] = useState<ICar[]>([]);
+
+    const fetchCars = async () => {
+        const cars = await getCars();
+        console.log(cars)
+        setCars(cars);
+    }
+
+    useEffect(() => {
+        fetchCars(); // Завантажуємо список машин при першому рендері
+    }, []);
 
     const onSubmit = async (formData: IForm) => {
-        await addCar(formData);
-        setActive(false);
-        reset();
+        addCar(formData)
+        setActive(false); // Закриваємо форму
+        reset(); // Очищаємо форму
     };
+
     return (
         <div>
             <h2 className="text-center text-black">Add Car</h2>

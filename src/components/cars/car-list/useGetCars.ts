@@ -7,7 +7,7 @@ export const useGetCars = () => {
     useEffect(() => {
         getCars().then(cars => setCars(cars))
     }, []);
-    console.log(cars)
 
+    console.log(cars)
     return {cars,setCars}
 }
