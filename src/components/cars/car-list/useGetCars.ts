@@ -8,5 +8,6 @@ export const useGetCars = () => {
         getCars().then(cars => setCars(cars))
     }, [cars]);
 
-    return cars
+    console.log(cars)
+    return {cars,setCars}
 }

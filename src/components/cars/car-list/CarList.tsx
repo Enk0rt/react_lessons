@@ -2,7 +2,7 @@ import {CarItem} from "../car-item/CarItem.tsx";
 import {useGetCars} from "./useGetCars.ts";
 
 export const CarList = () => {
-    const cars = useGetCars()
+    const {cars} = useGetCars()
     return (
         <div className={'grid grid-cols-4 gap-4 mx-auto mt-6'}>
             {
