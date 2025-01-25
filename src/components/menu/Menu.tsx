@@ -24,7 +24,7 @@ export const Menu = () => {
                 </ul>
             </div>
             <Modal active={active} setActive={setActive} children={
-                <Form/>
+                <Form setActive={setActive}/>
             }/>
         </div>
     );
