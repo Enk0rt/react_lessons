@@ -1,10 +1,14 @@
 import {Link} from "react-router-dom";
 import {AppRoutes} from "../../routes/const.ts";
 import {Modal} from "../modal/Modal.tsx";
-import {useState} from "react";
+import {Dispatch, SetStateAction, useState} from "react";
 import {Form} from "../form/Form.tsx";
 
-export const Menu = () => {
+type MenuProps = {
+    setShouldRefetch : Dispatch<SetStateAction<boolean>>;
+}
+
+export const Menu = ({setShouldRefetch}:MenuProps) => {
 
     const [active, setActive] = useState<boolean>(false)
 
@@ -24,7 +28,7 @@ export const Menu = () => {
                 </ul>
             </div>
             <Modal active={active} setActive={setActive} children={
-                <Form setActive={setActive}/>
+                <Form setActive={setActive} setShouldRefetch={setShouldRefetch}/>
             }/>
         </div>
     );

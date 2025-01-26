@@ -5,27 +5,23 @@ import {joiResolver} from "@hookform/resolvers/joi";
 import {carValidator} from "../../validators/car-validator/CarValidator.ts";
 import {Dispatch, FC, SetStateAction} from "react";
 import {addCar} from "../../api/getData.ts";
-import {useGetCars} from "../cars/car-list/useGetCars.ts";
 
 type FormProps = {
     setActive: Dispatch<SetStateAction<boolean>>;
+    setShouldRefetch : Dispatch<SetStateAction<boolean>>;
 };
 
-export const Form: FC<FormProps> = ({setActive}) => {
+export const Form: FC<FormProps> = ({setActive,setShouldRefetch}) => {
     const {handleSubmit, register, formState: {errors}, reset} = useForm<IForm>({
         mode: "all",
         resolver: joiResolver(carValidator),
     });
 
-    const {shouldRefetch,setShouldRefetch} = useGetCars();
 
     const onSubmit = async (formData: IForm) => {
         await addCar(formData);
         setActive(false);
-        setShouldRefetch(true);
-        if(shouldRefetch){
-            setShouldRefetch(false);
-        }
+        setShouldRefetch(prevState => !prevState);
         reset();
     };
     return (
