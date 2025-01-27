@@ -1,0 +1,11 @@
+.home--Dark,.cars--Dark{
+    color-scheme: dark;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #d1d0d0;
+
+}
+
+.home--Light,.cars--Light{
+    color-scheme: light;
+    background-color: whitesmoke;
+}
