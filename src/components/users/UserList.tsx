@@ -1,14 +1,15 @@
 import {User} from "../user/User.tsx";
-import {useGetUsers} from "../../hooks/useGetUsers.tsx";
+import {useGetData} from "../../hooks/useGetData.tsx";
+import {apiData} from "../../api/Data/getData.ts";
 
 export const UserList = () => {
 
-    const {users} = useGetUsers();
+    const {data} = useGetData(apiData.getData,[]);
 
     return (
         <div>
             {
-                users.map(user => <User key={user.id} item={user}/>)
+                data.map(user => <User key={user.id} item={user}/>)
             }
         </div>
     );
