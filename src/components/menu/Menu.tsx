@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
+import {memo} from "react";
 
-export const Menu = () => {
+export const Menu = memo(() => {
     return (
         <div>
             <ul>
@@ -22,5 +23,4 @@ export const Menu = () => {
             </ul>
         </div>
     );
-};
-
+})

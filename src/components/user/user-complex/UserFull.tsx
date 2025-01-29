@@ -1,12 +1,12 @@
-import PostItem from "../../post/post-item/PostItem.tsx";
 import {useAppSelector} from "../../../redux/hooks/useAppSelector.tsx";
 import {IUser} from "../../../models/user/IUser.ts";
+import {PostComplex} from "../../post/post-complex/PostComplex.tsx";
 
 interface UserFullProps {
     item: IUser
 }
 
-export const UserFull = ({item}: UserFullProps) => {
+export const UserComplex = ({item}: UserFullProps) => {
     const posts = useAppSelector(state => state.postSlice.posts);
 
     return (
@@ -14,7 +14,7 @@ export const UserFull = ({item}: UserFullProps) => {
             {item.id} -- {item.name}
             <h2>Posts:</h2>
             {
-                posts.map(post => post.userId === item.id && <PostItem key={post.id} item={post}/>)
+                posts.map(post => post.userId === item.id && <PostComplex key={post.id} item={post}/>)
             }
 
         </div>

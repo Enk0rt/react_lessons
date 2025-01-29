@@ -8,7 +8,7 @@ export const CommentList = () => {
     const {comments} = useAppSelector(({commentSlice}) => commentSlice);
     const dispatch = useAppDispatch()
     useEffect(() => {
-        dispatch(commentSliceActions.loadComments())
+        if(!comments.length) dispatch(commentSliceActions.loadComments())
     }, []);
     return (
         <div>

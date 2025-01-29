@@ -1,4 +1,4 @@
-import User from "../user-item/User.tsx";
+import {User} from "../user-item/User.tsx";
 import {userSliceActions} from "../../../redux/slices/user-slice/UserSlice.ts";
 import {useAppSelector} from "../../../redux/hooks/useAppSelector.tsx";
 import {useEffect} from "react";
@@ -10,7 +10,7 @@ export const UserList = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(userSliceActions.loadUsers())
+        if(!users.length) dispatch(userSliceActions.loadUsers())
     }, []);
 
     return (

@@ -1,6 +1,6 @@
 
-import {UserFull} from "../../components/user/user-full/UserFull.tsx";
 import {useGetAll} from "./useGetAll.tsx";
+import {UserComplex} from "../../components/user/user-complex/UserFull.tsx";
 
 
 export const ComplexPage = () => {
@@ -8,7 +8,7 @@ export const ComplexPage = () => {
     return (
         <div>
             {
-                users.map(user => <UserFull key={user.id} item={user}/>)
+                users.map(user => <UserComplex key={user.id} item={user}/>)
             }
         </div>
     );

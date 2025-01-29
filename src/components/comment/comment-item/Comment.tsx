@@ -1,10 +1,11 @@
 import {IComment} from "../../../models/comment/IComment.ts";
+import {memo} from "react";
 
 interface CommentProps {
     item: IComment
 }
 
-export const Comment = ({item}: CommentProps) => {
+export const Comment = memo(({item}: CommentProps) => {
     return (
         <div className={'bg-gray-500 bg-opacity-50 mt-2'}>
             <h2>{item.id} -- {item.name}</h2>
@@ -12,5 +13,5 @@ export const Comment = ({item}: CommentProps) => {
             <br/>
         </div>
     );
-};
+})
 
