@@ -8,5 +8,5 @@ export const useGetData = <T,> (dataToGet:()=>Promise<T>,defaultValue:T) => {
         dataToGet().then((value:T)=> setData(value));
     }, []);
 
-    return {data,setData}
+    return {data}
 }
